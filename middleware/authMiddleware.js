@@ -7,7 +7,7 @@ const authorization = (req, res, next) => {
         const decode = jwt.verify(token, process.env.SECRET_KEY)
 
         if (decode) {
-            console.log(req.body)
+            console.log(decode)
             req.body.userId = decode.userId;
             req.body.fullName = decode.fullName;
             next()
